@@ -2,18 +2,44 @@ html,
 body,
 #mapdiv {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 
-#header {
-    font-family: helvetica;
-    font-size: 20px;
-    color: black;
-    padding: 5px;
+#floater {
+    color:royalblue;
+    text-stroke: 2px black;
+    text-shadow: 1px 1px white;
+    position: absolute;
+    z-index: 999;
+    top: 10px;
+    left: 60px;
     text-align: center;
-    background-color: rgba(224, 224, 224, 0.5);
-    border-radius: 25px;
-    background-size: 100px 80px;
-    z-index: 99
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url(https://statesymbolsusa.org/sites/statesymbolsusa.org/files/primary-images/flagofColoradoCO.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: Helvetica;
+    font-size: 24px;
+    padding: 4px;
+    border-radius: 16px;
+    border-style: solid;
+    border-width: thin;
+    border-color: royalblue;
+}
+
+#myname {
+    color: lightgray;
+    position: absolute;
+    z-index: 1000;
+    bottom: 2px;
+    left: 5px;
+    font-family: helvetica;
+    font-size: 10px;
+    background-color: rgba(121, 123, 127, 0.5);
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
 }
