@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker.bindPopup(
-        '<b>Horsetooth Reservoir</b>'
+        '<b>Horsetooth</b><br> Elevation: 5607 ft.<br> Number of routes: 224<br> Type of routes: TR/Sport/Boulder/Trad<br> <a href="https://www.mountainproject.com/v/horsetooth-reservoir/105744295">More Info</a>'
     );
 
     var point1 = [40.694621, -105.378603];
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker1.bindPopup(
-        '<b>The Palace</b>'
+        '<b>The Palace</b><br> Elevation: 6057 ft.<br> Number of routes: 105<br> Type of routes: Sport/Trad<br> <a href="https://www.mountainproject.com/v/the-palace/105873941">More Info</a>'
     );
 
     var point2 = [38.873621, -104.880550];
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker2.bindPopup(
-        '<b>Garden of the Gods</b>'
+        '<b>Garden of the Gods</b><br> Elevation: 6455 ft.<br> Number of routes: 144<br> Type of routes: Sport/Trad/TR/Boulder<br> <a href="https://www.mountainproject.com/v/garden-of-the-gods/105744301">More Info</a>'
     );
 
     var point3 = [39.791291, -105.201154];
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker3.bindPopup(
-        '<b>Table Mountain</b>'
+        '<b>Golden Cliffs</b><br> Elevation: 6424 ft.<br> Number of routes: 471<br> Type of routes: Sport/Trad/TR<br> <a href="https://www.mountainproject.com/v/north-table-mountaingolden-cliffs/105744249">More Info</a>'
     );
 
     var point4 = [39.932288, -105.286480];
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker4.bindPopup(
-        '<b>Eldorado Canyon</b>'
+        '<b>Eldorado Canyon</b><br>Elevation: 5821 ft.<br>Number of routes: 1,140<br> Type of routes: Trad/Sport/TR/Boulder<br> <a href="https://www.mountainproject.com/v/eldorado-canyon-sp/105744246">More Info</a>'
     );
 
     var point5 = [40.41555, -105.3761];
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker5.bindPopup(
-        "<b>Mary's Bust</b>"
+        "<b>Mary's Bust</b><br> Elevation: 6687 ft.<br> Number of routes: 48<br> Type of routes: Trad/Sport<br> <a href='https://www.mountainproject.com/v/marys-bust-area/106811702'>More Info</a>"
     );
 
     var point6 = [38.818, -108.6012];
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker6.bindPopup(
-        "<b>Unaweep Canyon</b>"
+        "<b>Unaweep Canyon</b><br> Elevation: 6816 ft.<br>Number of routes: 1,746<br>Type of routes: Trad/Sport/Boulder/TR<br> <a href='https://www.mountainproject.com/v/unaweep-canyon/105744400'>More Info</a>"
     );
 
     var point7 = [39.4073, -106.6555];
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker7.bindPopup(
-        "<b>Lime Park</b><br> Elevation: 9,100 ft."
+        "<b>Lime Park</b><br> Elevation: 9,100 ft.<br>Number of routes: 72<br>Types of routes: Sport<br> <a href='https://www.mountainproject.com/v/lime-park-aka-lime-creek/105744451'>More Info</a>"
     );
 
     var point8 = [39.6042, -105.9481];
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker8.bindPopup(
-        "<b>Montezuma</b>"
+        "<b>Montezuma</b><br>Elevation: 9456 ft.<br>Number of routes: 83<br>Types of routes: Sport/TR/Trad/Boulder<br> <a href='https://www.mountainproject.com/v/keystone-aka-montezuma/105744388'>More Info</a>"
     );
 
     var point9 = [39.2603, -105.1011];
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
     myMarker9.bindPopup(
-        "<b>Devil's Head</b><br> Elevation: 9000 ft."
+        "<b>Devil's Head</b><br> Elevation: 9000 ft.<br>Number of routes: 359<br>Type of routes: Sport/Trad/TR<br> <a href='https://www.mountainproject.com/v/devils-head/105744261'>More Info</a>"
     );
 
     var markers = L.layerGroup([myMarker, myMarker1, myMarker2, myMarker3, myMarker4, myMarker5, myMarker6, myMarker7, myMarker8, myMarker9])
