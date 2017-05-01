@@ -8,8 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         id: 'mapbox.satellite',
         accessToken: 'pk.eyJ1IjoiYWxpbmRsZXkiLCJhIjoiY2l5Y2JlcmViMDBvczMyc2N1eTA4MDd4MSJ9.t0Z60l8r6_8DNbX7xB1bnA'
     }).addTo(mymap);
-
-    L.Control.geocoder().addTo(mymap);
+    
     
     var weather = L.tileLayer('https://maps.aerisapi.com/CSJEnhBz47Lj5Rnz1qOMJ_syBX7hid79IHKhZszE0qC6rmyNx8YNTSmb9NprmT/radar/{z}/{x}/{y}/current.png', {
         subdomains: '1234',
@@ -18,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }).addTo(mymap);
     weather.setOpacity(0.6);
 
+    L.Control.geocoder().addTo(mymap);
+    
     var point = [40.533594, -105.145036];
     var myMarker = L.circle(
         point,
@@ -156,10 +157,9 @@ document.addEventListener('DOMContentLoaded', function () {
     mymap.on('zoomend', function () {
         var currentZoom = mymap.getZoom();
         var myRadius = currentZoom * (1 / 2); //or whatever ratio you prefer
-        var myWeight = currentZoom * (1 / 5); //or whatever ratio you prefer
         markers.setStyle({
-            radius: myRadius,
-            weight: setWeight
+            radius: myRadius
         });
     });
+    
 });
