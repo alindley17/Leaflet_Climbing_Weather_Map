@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .addTo(mymap);
 
     // RESIZE ICONS WITH ZOOM LEVEL (NOT WORKING) //
-    map.on('zoomend', function () {
-        var currentZoom = map.getZoom();
+    mymap.on('zoomend', function () {
+        var currentZoom = mymap.getZoom();
         var myRadius = currentZoom * (1 / 2); //or whatever ratio you prefer
         var myWeight = currentZoom * (1 / 5); //or whatever ratio you prefer
         markers.setStyle({
