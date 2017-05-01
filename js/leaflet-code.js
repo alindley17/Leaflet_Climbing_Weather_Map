@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         id: 'mapbox.satellite',
         accessToken: 'pk.eyJ1IjoiYWxpbmRsZXkiLCJhIjoiY2l5Y2JlcmViMDBvczMyc2N1eTA4MDd4MSJ9.t0Z60l8r6_8DNbX7xB1bnA'
     }).addTo(mymap);
-    
-    
+
+
     var weather = L.tileLayer('https://maps.aerisapi.com/CSJEnhBz47Lj5Rnz1qOMJ_syBX7hid79IHKhZszE0qC6rmyNx8YNTSmb9NprmT/radar/{z}/{x}/{y}/current.png', {
         subdomains: '1234',
         attribution: '&copy;AerisWeather',
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     weather.setOpacity(0.6);
 
     L.Control.geocoder().addTo(mymap);
-    
+
     var point = [40.533594, -105.145036];
     var myMarker = L.circle(
         point,
@@ -150,16 +150,24 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     var markers = L.layerGroup([myMarker, myMarker1, myMarker2, myMarker3, myMarker4, myMarker5, myMarker6, myMarker7, myMarker8, myMarker9])
-        .addLayer(point)
-        .addTo(mymap);
+    //.addLayer(point)
+    .addTo(mymap);
 
     // RESIZE ICONS WITH ZOOM LEVEL (NOT WORKING) //
     mymap.on('zoomend', function () {
         var currentZoom = mymap.getZoom();
         var myRadius = currentZoom * (1 / 2); //or whatever ratio you prefer
+        //console.log(myRadius);
+        markers.eachLayer(function(layer) {
+            layer.setStyle ({
+                radius: myRadius
+            });
+        });
+        /*
         markers.setStyle({
             radius: myRadius
         });
+        */
     });
-    
+
 });
