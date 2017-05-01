@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
         accessToken: 'pk.eyJ1IjoiYWxpbmRsZXkiLCJhIjoiY2l5Y2JlcmViMDBvczMyc2N1eTA4MDd4MSJ9.t0Z60l8r6_8DNbX7xB1bnA'
     }).addTo(mymap);
 
+    L.Control.geocoder().addTo(mymap);
+    
     var weather = L.tileLayer('https://maps.aerisapi.com/CSJEnhBz47Lj5Rnz1qOMJ_syBX7hid79IHKhZszE0qC6rmyNx8YNTSmb9NprmT/radar/{z}/{x}/{y}/current.png', {
         subdomains: '1234',
         attribution: '&copy;AerisWeather',
@@ -25,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker.addTo(mymap);
     myMarker.bindPopup(
         '<b>Horsetooth Reservoir</b>'
     );
@@ -39,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker1.addTo(mymap);
     myMarker1.bindPopup(
         '<b>The Palace</b>'
     );
@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker2.addTo(mymap);
     myMarker2.bindPopup(
         '<b>Garden of the Gods</b>'
     );
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker3.addTo(mymap);
     myMarker3.bindPopup(
         '<b>Table Mountain</b>'
     );
@@ -81,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker4.addTo(mymap);
     myMarker4.bindPopup(
         '<b>Eldorado Canyon</b>'
     );
@@ -95,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker5.addTo(mymap);
     myMarker5.bindPopup(
         "<b>Mary's Bust</b>"
     );
@@ -109,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker6.addTo(mymap);
     myMarker6.bindPopup(
         "<b>Unaweep Canyon</b>"
     );
@@ -123,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker7.addTo(mymap);
     myMarker7.bindPopup(
         "<b>Lime Park</b><br> Elevation: 9,100 ft."
     );
@@ -137,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker8.addTo(mymap);
     myMarker8.bindPopup(
         "<b>Montezuma</b>"
     );
@@ -151,9 +144,22 @@ document.addEventListener('DOMContentLoaded', function () {
             fillOpacity: 0.8
         }
     );
-    myMarker9.addTo(mymap);
     myMarker9.bindPopup(
         "<b>Devil's Head</b><br> Elevation: 9000 ft."
     );
 
+    var markers = L.layerGroup([myMarker, myMarker1, myMarker2, myMarker3, myMarker4, myMarker5, myMarker6, myMarker7, myMarker8, myMarker9])
+        .addLayer(point)
+        .addTo(mymap);
+
+    // RESIZE ICONS WITH ZOOM LEVEL (NOT WORKING) //
+    map.on('zoomend', function () {
+        var currentZoom = map.getZoom();
+        var myRadius = currentZoom * (1 / 2); //or whatever ratio you prefer
+        var myWeight = currentZoom * (1 / 5); //or whatever ratio you prefer
+        markers.setStyle({
+            radius: myRadius,
+            weight: setWeight
+        });
+    });
 });
